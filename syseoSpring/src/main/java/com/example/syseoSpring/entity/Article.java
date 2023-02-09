@@ -1,5 +1,8 @@
 package com.example.syseoSpring.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.Id;
 
 import javax.persistence.Column;
@@ -7,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 
 @Entity // DB가 해당 객체를 인식 가능하게 해준다
+@AllArgsConstructor
+@ToString
 public class Article {
 
     @Id // 대표값을 지정
@@ -19,19 +24,4 @@ public class Article {
     @Column
     private String content;
 
-    // 생성자 추가
-    public Article(Long id, String title, String content) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-    }
-
-    @Override
-    public String toString() {
-        return "Article{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}';
-    }
 }
